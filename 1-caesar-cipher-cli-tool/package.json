@@ -1,0 +1,25 @@
+{
+  "name": "caesar-cipher-cli-tool",
+  "version": "1.0.0",
+  "description": "caesar cipher encode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VukZh/RSSchool-NodeJS/tree/1-caesar-cipher-cli-tool"
+  },
+  "keywords": [
+    "ceasar",
+    "cipher",
+    "encode",
+    "rsschool"
+  ],
+  "author": "vuk",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "yargs": "^15.3.1"
+  }
+}
