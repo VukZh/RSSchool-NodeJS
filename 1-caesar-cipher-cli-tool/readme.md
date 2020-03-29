@@ -25,7 +25,9 @@
 Примеры применения:
 
 $ node caesar_coder_cli -a encode -s 7 -i "./in.txt" -o "./out.txt"
+
 $ node caesar_coder_cli --action encode --shift 7 --input in.txt --output out.txt
+
 $ node caesar_coder_cli --action decode --shift 7 --input out.txt --output newIn.txt
 
 in.txt
