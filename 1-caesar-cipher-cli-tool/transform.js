@@ -13,14 +13,9 @@ class CaesarCipherTransform extends Transform {
         this.flag = flag;       
         this.cryptoEnUp = caesarAlphabet(step, originalEnUp, flag);
         this.cryptoEnLower = caesarAlphabet(step, originalEnLower, flag);
-        
-        console.log('step ' + this.step)
-        console.log('flag ' + this.flag)
-    }
-    
+    }    
     _transform(data, encode, cb) {
         let transformData = caesarCoder(data, originalEnUp, originalEnLower, this.cryptoEnUp, this.cryptoEnLower);
-
         this.push(transformData);
         cb();
     }

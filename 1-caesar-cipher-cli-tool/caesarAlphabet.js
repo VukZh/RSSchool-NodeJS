@@ -8,7 +8,7 @@ function caesarAlphabet(step, arr, flag) {
     stepCrypt = step;
   } else if (flag === "encode") {
     stepCrypt = Math.abs(step - 26);
-  } else throw new Error("action error !!!");
+  } else throw new Error("action error (encode / decode) !!!");
   calcAlphabet = arr.map(function(el, index, arr) {
     return index < stepCrypt
       ? arr[arr.length + index - stepCrypt]
