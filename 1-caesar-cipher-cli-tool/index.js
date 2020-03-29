@@ -1,31 +1,20 @@
-const chalk = require("chalk");
-const yargs = require("yargs");
+const chalk = require('chalk');
+const yargs = require('yargs');
+const fs = require('fs');
+const path = require('path');
+
+const args = require('./args');
+const CaesarCipherTransform = require('./transform');
+
+// const myReadableFileStream = fs.createReadStream (path.join (path.dirname(__filename), args.i), {encoding: 'utf-8'});
+const myReadableFileStream = fs.createReadStream (path.join (path.dirname(__filename), args.i));
 
 
-const argv = yargs
-  .usage("Usage: $0 [options]")
-  .option("i", {
-    alias: "input",
-    describe: "an input file",
-    type: "string"
-  })
-  .option("o", {
-    alias: "output",
-    describe: "an output file",
-    type: "string"
-  })
-  .option("a", {
-    alias: "action",
-    describe: "an action encode/decode",
-    type: "string"
-  })
-  .option("s", {
-    alias: "shift",
-    describe: "a shift",
-    type: "number"
-  })
-  .demandOption(["a", "s"]).argv;
+// const myWritableFileStream = fs.createWriteStream (path.join (path.dirname(__filename), args.o), {'flags': 'a', encoding: 'utf-8'});
+const myWritableFileStream = fs.createWriteStream (path.join (path.dirname(__filename), args.o));
 
-console.log(argv.i + " " + argv.o + " " + argv.s + " " + argv.a);
+const myTransformStream = new CaesarCipherTransform (args.s, args.a);
 
-console.log(chalk.red.bold("oops..."));
+myReadableFileStream.pipe(myTransformStream).pipe(myWritableFileStream)
+// myReadableFileStream.pipe(myWritableFileStream)
+
