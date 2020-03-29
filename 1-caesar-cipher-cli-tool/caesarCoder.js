@@ -5,7 +5,7 @@ const caesarCoder = (
   arrUpCrypto,
   arrLowCrypto
 ) => {
-  let res = "";
+  let res = '';
   for (let index = 0; index < str.length; index++) {
     let tmp = String.fromCharCode(str[index]);
 

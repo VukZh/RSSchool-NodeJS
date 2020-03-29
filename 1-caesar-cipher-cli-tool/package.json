@@ -4,6 +4,7 @@
   "description": "caesar cipher encode",
   "main": "index.js",
   "scripts": {
+    "start": "node caesar_coder_cli --action encode --shift 7 --input in.txt --output out.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
