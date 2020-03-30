@@ -8,8 +8,6 @@ const { Transform } = require('stream');
 class CaesarCipherTransform extends Transform {
   constructor(step, flag) {
     super();
-    this.step = step;
-    this.flag = flag;
     this.cryptoEnUp = caesarAlphabet(step, originalEnUp, flag);
     this.cryptoEnLower = caesarAlphabet(step, originalEnLower, flag);
   }

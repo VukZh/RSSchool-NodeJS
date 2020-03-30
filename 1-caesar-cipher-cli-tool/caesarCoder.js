@@ -5,10 +5,9 @@ const caesarCoder = (
   arrUpCrypto,
   arrLowCrypto
 ) => {
-  let res = '';
+  let res = Uint8Array.from(str);
   for (let index = 0; index < str.length; index++) {
-    let tmp = String.fromCharCode(str[index]);
-
+    let tmp = str[index];
     let indexU = arrUpOriginal.indexOf(tmp);
     let indexL = arrLowOriginal.indexOf(tmp);
     if (indexU !== -1) {
@@ -16,7 +15,7 @@ const caesarCoder = (
     } else if (indexL !== -1) {
       tmp = arrLowCrypto[indexL];
     }
-    res += tmp;
+    res[index] = tmp.toLocaleString();
   }
   return res;
 };
